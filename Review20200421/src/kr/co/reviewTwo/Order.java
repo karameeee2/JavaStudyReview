@@ -8,45 +8,46 @@ public class Order {
 		while(true) {
 			char ju = OrderFunc.selectJu(input);
 			if(ju=='y'||ju=='Y') {
+				OrderFunc.displayJu(1);
 				int menu = OrderFunc.selectMenu(input);
 
-				if(menu==1) {
-					System.out.println("자장면 선택");
-					System.out.println("곱배기 선택 y/n");
-					char gob = input.next().charAt(0);
-
+				if(menu==1) {//자장면 선택
+					OrderFunc.displayMenu(1);
+					char gob = OrderFunc.selectGob(input);
+					
 					if(gob=='y'||gob=='Y') {
-						System.out.println("자장면 곱배기 선택");
+						OrderFunc.displayGob(1);
 					}else {
-						System.out.println("자장면 보통 선택");
+						OrderFunc.displayGob(2);
 					}
-				}else if (menu==2) {
-					System.out.println("짬뽕 선택");
-					System.out.println("곱배기 선택 y/n");
-					char gob = input.next().charAt(0);
-
+					
+				}else if (menu==2) {//짬뽕 선택
+					OrderFunc.displayMenu(2);
+					char gob = OrderFunc.selectGob(input);
+					
 					if(gob=='y'||gob=='Y') {
-						System.out.println("짬뽕 곱배기 선택");
+						OrderFunc.displayGob(3);
 					}else {
-						System.out.println("찜뽕 보통 선택");
+						OrderFunc.displayGob(4);
 					}
-				}else if (menu==3) {
-					System.out.println("탕수육 선택");
-					System.out.println("1. 대자   2. 중자   3. 소자");
-					int tang = input.nextInt();
-
+					
+				}else if (menu==3) {//탕수육 선택
+					OrderFunc.displayMenu(3);
+					int tang = OrderFunc.selectTang(input);
+					
 					if(tang==1) {
-						System.out.println("탕수육 대자 선택");
+						OrderFunc.displayTang(1);
 					}else if(tang==2) {
-						System.out.println("탕수육 중자 선택");
+						OrderFunc.displayTang(2);
 					}else if(tang==3) {
-						System.out.println("탕수육 소자 선택");
+						OrderFunc.displayTang(3);
 					}
+					
 				}else if (menu==4) {
 					continue;
 				}
 			}else {
-				System.out.println("주문취소");
+				OrderFunc.displayJu(2);
 				break;
 			}
 		}

@@ -10,6 +10,14 @@ public class OrderFunc {
 		return ju;
 	}
 	
+	public static void displayJu(int number) {
+		if(number==1) {
+			System.out.println("주문선택");
+		}else {
+			System.out.println("주문취소");
+		}
+	}
+	
 	public static int selectMenu(Scanner input) {
 		System.out.println("주문선택");
 		System.out.println("=======메뉴선택=======");
@@ -23,54 +31,54 @@ public class OrderFunc {
 		return menu;
 	}
 	
-	public static void selectGob() {
-		
+	public static char selectGob(Scanner input) {
+		System.out.println("곱배기 y/n");
+		char gob = input.next().charAt(0);
+		return gob;
 	}
-}
-/*
-Scanner input = new Scanner(System.in);
-while(true) {
-
-	if(ju=='y'||ju=='Y') {
-		
-		if(menu==1) {
+	
+	public static void displayMenu(int number) {
+		if(number==1) {
 			System.out.println("자장면 선택");
-			System.out.println("곱배기 선택 y/n");
-			char gob = input.next().charAt(0);
-			
-			if(gob=='y'||gob=='Y') {
-				System.out.println("자장면 곱배기 선택");
-			}else {
-				System.out.println("자장면 보통 선택");
-			}
-		}else if (menu==2) {
+		}else if(number==2) {
 			System.out.println("짬뽕 선택");
-			System.out.println("곱배기 선택 y/n");
-			char gob = input.next().charAt(0);
-			
-			if(gob=='y'||gob=='Y') {
-				System.out.println("짬뽕 곱배기 선택");
-			}else {
-				System.out.println("찜뽕 보통 선택");
-			}
-		}else if (menu==3) {
+		}else if(number==3) {
 			System.out.println("탕수육 선택");
-			System.out.println("1. 대자   2. 중자   3. 소자");
-			int tang = input.nextInt();
-			
-			if(tang==1) {
-				System.out.println("탕수육 대자 선택");
-			}else if(tang==2) {
-				System.out.println("탕수육 중자 선택");
-			}else if(tang==3) {
-				System.out.println("탕수육 소자 선택");
-			}
-		}else if (menu==4) {
-			continue;
 		}
-	}else {
-		System.out.println("주문취소");
-		break;
+	}
+	
+	public static void displayGob(int number) {
+		if(number==1) {
+			System.out.println("자장면 곱배기 선택");
+			System.out.printf("가격은 %d원 입니다.", 6000);
+		}else if(number==2) {
+			System.out.println("자장면 보통 선택");
+			System.out.printf("가격은 %d원 입니다.", 5000);
+		}else if(number==3) {
+			System.out.println("짬뽕 곱배기 선택");
+			System.out.printf("가격은 %d원 입니다.", 7000);
+		}else if(number==4) {
+			System.out.println("짬뽕 보통 선택");
+			System.out.printf("가격은 %d원 입니다.", 6000);
+		}
+	}
+	
+	public static int selectTang(Scanner input) {
+		System.out.println("1. 대자 2. 중자 3. 소자");
+		int tang = input.nextInt();
+		return tang;
+	}
+	
+	public static void displayTang(int number) {
+		if(number==1) {
+			System.out.println("탕수육 대자 선택");
+			System.out.printf("가격은 %d원 입니다.", 15000);
+		}else if(number==2) {
+			System.out.println("탕수육 중자 선택");
+			System.out.printf("가격은 %d원 입니다.", 12000);
+		}else if(number==3) {
+			System.out.println("탕수육 소자 선택");
+			System.out.printf("가격은 %d원 입니다.", 9000);
+		}
 	}
 }
-*/
